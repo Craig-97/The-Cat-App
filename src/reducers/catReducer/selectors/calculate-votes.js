@@ -1,5 +1,5 @@
 export const calculateVotes = votes => {
-  const reducedVotes = votes.reduce((result, currentVote) => {
+  const reducedVotes = votes?.reduce((result, currentVote) => {
     // If an array already present for key, push it to the array. Else create an array and push the object
     (result[currentVote['image_id']] =
       result[currentVote['image_id']] || []).push(currentVote.value);
@@ -8,24 +8,27 @@ export const calculateVotes = votes => {
   }, {}); // empty object is the initial value for result object
 
   let finalVotes = [];
-  Object.entries(reducedVotes).forEach(([key, value]) => {
-    let calcVotes = 0;
 
-    value.forEach(number => {
-      if (number === 0) {
-        calcVotes = calcVotes - 1;
-      }
+  if (reducedVotes) {
+    Object.entries(reducedVotes).forEach(([key, value]) => {
+      let calcVotes = 0;
 
-      if (number === 1) {
-        calcVotes++;
-      }
+      value?.forEach(number => {
+        if (number === 0) {
+          calcVotes = calcVotes - 1;
+        }
+
+        if (number === 1) {
+          calcVotes++;
+        }
+      });
+
+      finalVotes.push({
+        image_id: key,
+        value: calcVotes
+      });
     });
-
-    finalVotes.push({
-      image_id: key,
-      value: calcVotes
-    });
-  });
+  }
 
   return finalVotes;
 };

@@ -10,7 +10,7 @@ import {
 
 import {
   addCatFavourite,
-  getFilteredCats,
+  getFormattedCats,
   removeCatFavourite
 } from './selectors';
 
@@ -39,7 +39,7 @@ let catDataReducer = function (state, action) {
       const { cats, favourites, votes } = action.payload;
       return {
         ...state,
-        data: getFilteredCats(cats, favourites, votes),
+        data: getFormattedCats(cats, favourites, votes),
         loading: false
       };
     case FETCH_CATS_ERROR:

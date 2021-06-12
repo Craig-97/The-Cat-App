@@ -1,11 +1,17 @@
-export const removeCatVote = (payload, cats) => {
-  const { variables } = payload;
-  const { image_id } = variables;
+import cloneDeep from 'lodash/cloneDeep';
 
-  let updatedCats = [...cats];
+export const removeCatVote = (payload, cats) => {
+  const { variables } = payload || {};
+  const { image_id } = variables || {};
+
+  let updatedCats = cats?.length ? cloneDeep(cats) : [];
   updatedCats?.some(cat => {
     if (cat.id === image_id) {
-      cat.votes = cat.votes - 1;
+      if (!cat.votes) {
+        cat.votes = -1;
+      } else {
+        cat.votes = cat.votes - 1;
+      }
     }
     return false;
   });
@@ -14,17 +20,20 @@ export const removeCatVote = (payload, cats) => {
 };
 
 export const addCatVote = (payload, cats) => {
-  const { variables } = payload;
-  const { image_id } = variables;
+  const { variables } = payload || {};
+  const { image_id } = variables || {};
 
-  let updatedCats = [...cats];
+  let updatedCats = cats?.length ? cloneDeep(cats) : [];
   updatedCats?.some(cat => {
     if (cat.id === image_id) {
-      cat.votes = cat.votes + 1;
+      if (!cat.votes) {
+        cat.votes = 1;
+      } else {
+        cat.votes = cat.votes + 1;
+      }
       return true;
     }
     return false;
   });
-
   return updatedCats;
 };

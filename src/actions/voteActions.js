@@ -1,4 +1,3 @@
-//GET VOTES
 export const FETCH_VOTES_PENDING = 'FETCH_VOTES_PENDING';
 export const FETCH_VOTES_SUCCESS = 'FETCH_VOTES_SUCCESS';
 export const FETCH_VOTES_ERROR = 'FETCH_VOTES_ERROR';
@@ -23,7 +22,6 @@ export const fetchVotesError = error => {
   };
 };
 
-//POST VOTE
 export const UPVOTE_CAT_PENDING = 'UPVOTE_CAT_PENDING';
 export const UPVOTE_CAT_SUCCESS = 'UPVOTE_CAT_SUCCESS';
 export const UPVOTE_CAT_ERROR = 'UPVOTE_CAT_ERROR';
@@ -48,7 +46,6 @@ export const upvoteCatError = error => {
   };
 };
 
-//POST VOTE
 export const DOWNVOTE_CAT_PENDING = 'DOWNVOTE_CAT_PENDING';
 export const DOWNVOTE_CAT_SUCCESS = 'DOWNVOTE_CAT_SUCCESS';
 export const DOWNVOTE_CAT_ERROR = 'DOWNVOTE_CAT_ERROR';

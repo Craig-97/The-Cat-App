@@ -1,10 +1,11 @@
 import { calculateVotes } from './calculate-votes';
+import cloneDeep from 'lodash/cloneDeep';
 
-export const getFilteredCats = (cats, favourites, votes) => {
-  let filteredCats = [...cats];
+export const getFormattedCats = (cats, favourites, votes) => {
+  let formattedCats = cats?.length ? cloneDeep(cats) : [];
   const calculatedVotes = calculateVotes(votes);
 
-  filteredCats?.forEach(cat => {
+  formattedCats?.forEach(cat => {
     cat.votes = 0;
 
     favourites?.forEach(favourite => {
@@ -20,5 +21,5 @@ export const getFilteredCats = (cats, favourites, votes) => {
     });
   });
 
-  return filteredCats;
+  return formattedCats;
 };

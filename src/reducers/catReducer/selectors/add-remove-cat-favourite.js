@@ -1,5 +1,7 @@
+import cloneDeep from 'lodash/cloneDeep';
+
 export const removeCatFavourite = (id, cats) => {
-  let updatedCats = [...cats];
+  let updatedCats = cats?.length ? cloneDeep(cats) : [];
   updatedCats?.some(cat => {
     if (cat.favourite_id === id) {
       delete cat.favourite_id;
@@ -12,11 +14,11 @@ export const removeCatFavourite = (id, cats) => {
 };
 
 export const addCatFavourite = (payload, cats) => {
-  const { favourite, variables } = payload;
-  const { image_id } = variables;
-  const { id } = favourite;
+  const { favourite, variables } = payload || {};
+  const { image_id } = variables || {};
+  const { id } = favourite || {};
 
-  let updatedCats = [...cats];
+  let updatedCats = cats?.length ? cloneDeep(cats) : [];
   updatedCats?.some(cat => {
     if (cat.id === image_id) {
       cat.favourite_id = id;
