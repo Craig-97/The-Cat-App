@@ -1,0 +1,21 @@
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &__status {
+    display: flex;
+    align-items: center;
+  }
+
+  .MuiSvgIcon-root {
+    margin: 0 1rem 0 0;
+    height: 5em;
+    width: 5em;
+  }
+
+  h1 {
+    font-size: 5em;
+  }
+}

@@ -1,0 +1,26 @@
+.upload {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .MuiDropzoneArea-root {
+    width: 75%;
+    margin: 0 0 1rem;
+  }
+
+  .MuiTypography-root {
+    margin: 0 0 1rem;
+    width: 75%;
+    text-align: center;
+  }
+  .MuiDropzoneArea-text {
+    margin: 2rem 0;
+    width: 100%;
+  }
+
+  &__loading {
+    text-align: center;
+    margin: 1rem 0;
+  }
+}
