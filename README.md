@@ -8,6 +8,9 @@ This App is a demonstration of how to use some of the features of thecatapi.com 
 - Viewing the images scores
 - Uploading your own images
 
+![image](https://user-images.githubusercontent.com/41014229/121807790-90deca00-cc4d-11eb-894f-31e8f76fc1a0.png)
+
+
 ## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
