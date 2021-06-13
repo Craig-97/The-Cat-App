@@ -19,6 +19,10 @@
     margin: 1rem;
     transition: transform 0.15s ease-in-out;
 
+    @media only screen and (max-width: 400px) {
+      width: 275px;
+    }
+
     &:hover {
       transform: scale3d(1.05, 1.05, 1);
     }
