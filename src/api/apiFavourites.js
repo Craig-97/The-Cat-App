@@ -10,6 +10,7 @@ import {
   deleteFavouriteError
 } from '../actions';
 
+/* Request to add favourite status to a cat */
 export const setFavourite = id => dispatch => {
   const variables = {
     image_id: id
@@ -26,6 +27,7 @@ export const setFavourite = id => dispatch => {
   );
 };
 
+/* Request to delete a cats favourite status */
 export const deleteFavourite = id => dispatch => {
   apiDELETE(
     dispatch,

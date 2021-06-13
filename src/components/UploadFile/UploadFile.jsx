@@ -17,12 +17,14 @@ export const UploadFile = () => {
   const [file, setFile] = useState(null);
   const navigate = useNavigate();
 
+  /* Fetches upload error, isUploading and uploadComplete from redux store */
   const { error, isUploading, uploadComplete } = useSelector(state => ({
     error: catsError(state),
     isUploading: catsUploading(state),
     uploadComplete: catsUploadComplete(state)
   }));
 
+  /* Once upload is complete navigate to home page */
   useEffect(() => {
     if (uploadComplete) {
       navigate('/');

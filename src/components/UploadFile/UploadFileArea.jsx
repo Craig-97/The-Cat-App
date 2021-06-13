@@ -3,6 +3,7 @@ import { DropzoneArea } from 'material-ui-dropzone';
 import { Typography } from '@material-ui/core';
 
 export const UploadFileArea = ({ setFile }) => {
+  /* When a file is added, update file state with new file */
   const handleChange = files => {
     if (files?.length) {
       setFile(files?.[0]);

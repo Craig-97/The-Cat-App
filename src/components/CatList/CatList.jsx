@@ -8,15 +8,20 @@ import './catList.scss';
 
 export const CatList = () => {
   const [page, setPage] = useState(1);
+
+  /* Fetches cats from redux store */
   const { cats } = useSelector(state => ({
     cats: getCats(state)
   }));
 
+  /* 8 cats are to be displayed per page, takes current cat length 
+  to figure out how many pages will be required */
   const pageCount = useMemo(
     () => (cats?.length / 8 > 1 ? Math.ceil(cats?.length / 8) : 1),
     [cats]
   );
 
+  /* Returns the cats to be displayed on the selected page */
   const paginatedCats = useMemo(() => paginate(cats, 8, page), [cats, page]);
 
   return (

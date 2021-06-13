@@ -2,6 +2,7 @@ import axios from 'axios';
 import { API_BASE, DEFAULT_HEADERS } from './constants';
 import { fetchCatsPending, fetchCatsSuccess, fetchCatsError } from '../actions';
 
+/* Fetches votes, favourites and images data and dispatches action once complete or error occurs */
 export const fetchCatsVotesAndFavs = () => dispatch => {
   dispatch(fetchCatsPending());
   axios

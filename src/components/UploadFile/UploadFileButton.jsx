@@ -8,10 +8,12 @@ import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 export const UploadFileButton = ({ file }) => {
   const dispatch = useDispatch();
 
+  /* Fetches isUploading from redux store */
   const { isUploading } = useSelector(state => ({
     isUploading: catsUploading(state)
   }));
 
+  /* When upload file button is pressed, send POST request */
   const onUpload = () => {
     if (file) dispatch(uploadCat(file));
   };

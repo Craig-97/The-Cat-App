@@ -8,6 +8,7 @@ const Alert = props => <MuiAlert elevation={6} variant="filled" {...props} />;
 export const AlertBar = ({ message, severity = 'success' }) => {
   const [open, setOpen] = useState(false);
 
+  /* Open/Closes snackbar when message changes */
   useEffect(() => {
     if (message) {
       setOpen(true);
@@ -16,6 +17,7 @@ export const AlertBar = ({ message, severity = 'success' }) => {
     }
   }, [message]);
 
+  /* Closes snackbar when onClose event is fired */
   const handleClose = (e, reason) => {
     if (reason === 'clickaway') {
       return;

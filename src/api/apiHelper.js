@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { API_BASE } from './constants';
 
+/* Helper for API GET requests */
 export const apiGET = (
   dispatch,
   pendingAction,
@@ -24,6 +25,7 @@ export const apiGET = (
     });
 };
 
+/* Helper for API POST requests */
 export const apiPOST = (
   dispatch,
   pendingAction,
@@ -48,6 +50,7 @@ export const apiPOST = (
     });
 };
 
+/* Helper for API POST requests with formData body */
 export const apiFormDataPOST = (
   dispatch,
   pendingAction,
@@ -72,6 +75,7 @@ export const apiFormDataPOST = (
     });
 };
 
+/* Helper for API DELETE requests */
 export const apiDELETE = (
   dispatch,
   pendingAction,

@@ -14,13 +14,14 @@ import './homepage.scss';
 export const Homepage = () => {
   const dispatch = useDispatch();
 
+  /* Fetches cat isLoading, cat errors and alert messages from redux store */
   const { isLoading, error, alert } = useSelector(state => ({
     isLoading: catsLoading(state),
     error: catsError(state),
     alert: getAlert(state)
   }));
 
-  /* FETCHES DATA ON MOUNT */
+  /* Fetches all cat data on mount */
   useEffect(() => {
     dispatch(fetchCatsVotesAndFavs());
   }, [dispatch]);

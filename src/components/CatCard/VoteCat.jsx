@@ -11,13 +11,17 @@ export const VoteCat = ({ id }) => {
 
   const upvote = () =>
     dispatch(
+      // sends upvote POST request
       upvoteCat(id),
+      // updates alert state so snackbar alert for upvote is displayed
       dispatch(showSuccessAlert(`${id} - has been upvoted`))
     );
 
   const downvote = () =>
     dispatch(
+      // sends downvote POST request
       downvoteCat(id),
+      // updates alert state so snackbar alert for downvote is displayed
       dispatch(showSuccessAlert(`${id} - has been downvoted`))
     );
 

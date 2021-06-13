@@ -3,6 +3,7 @@ import { POST_IMAGE_HEADERS } from './constants';
 
 import { uploadCatPending, uploadCatSuccess, uploadCatError } from '../actions';
 
+/* Request to upload cat image */
 export const uploadCat = image => dispatch => {
   let formData = new FormData();
   formData.append('file', image);

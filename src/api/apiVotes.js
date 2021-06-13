@@ -10,6 +10,7 @@ import {
   downvoteCatError
 } from '../actions';
 
+/* Request to add a vote to a cat */
 export const upvoteCat = id => dispatch => {
   const variables = {
     image_id: id,
@@ -27,6 +28,7 @@ export const upvoteCat = id => dispatch => {
   );
 };
 
+/* Request to remove a vote from a cat */
 export const downvoteCat = id => dispatch => {
   const variables = {
     image_id: id,
