@@ -20,8 +20,8 @@ export const CatList = () => {
   const paginatedCats = useMemo(() => paginate(cats, 8, page), [cats, page]);
 
   return (
-    Boolean(cats.length) && (
-      <div className="cats__container container">
+    Boolean(cats?.length) && (
+      <div data-testid="cat-list" className="cats__container container">
         <div className="container__catlist catlist">
           {paginatedCats?.map((cat, index) => {
             return <CatCard key={index} cat={cat} />;

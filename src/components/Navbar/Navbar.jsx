@@ -8,7 +8,7 @@ import './navbar.scss';
 
 export const Navbar = () => {
   return (
-    <AppBar className="navbar" position="sticky">
+    <AppBar data-testid="navbar" className="navbar" position="sticky">
       <Toolbar className="navbar__toolbar">
         <Typography variant="h1">The Cat App</Typography>
         <div className="navbar__links">

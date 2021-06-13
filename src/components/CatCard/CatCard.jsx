@@ -10,10 +10,10 @@ import { FavouriteCat } from './FavouriteCat';
 import { VoteCat } from './VoteCat';
 
 export const CatCard = ({ cat }) => {
-  const { url, id, favourite_id: favId, votes } = cat;
+  const { url, id, favourite_id: favId, votes } = cat || {};
 
   return (
-    <Card key={id} className="catlist__cat cat">
+    <Card data-testid="cat" key={id} className="catlist__cat cat">
       <CardMedia component="img" alt={id} image={url} title={`cat-${id}`} />
       <FavouriteCat id={id} favId={favId} />
       <CardActions className="cat__actions actions">

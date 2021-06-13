@@ -30,7 +30,7 @@ export const UploadFile = () => {
   }, [uploadComplete, navigate]);
 
   return (
-    <div className="upload">
+    <div data-testid="upload" className="upload">
       <UploadHeader />
       {isUploading ? (
         <LoadingSpinner className="upload__loading" text="UPLOADING IMAGE..." />

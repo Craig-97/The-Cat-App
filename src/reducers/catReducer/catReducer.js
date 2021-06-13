@@ -51,24 +51,24 @@ let catDataReducer = function (state, action) {
     case DELETE_FAVOURITE_SUCCESS:
       return {
         ...state,
-        cats: removeCatFavourite(action.payload, state.data)
+        data: removeCatFavourite(action.payload, state.data)
       };
     case SET_FAVOURITE_SUCCESS:
       return {
         ...state,
-        cats: addCatFavourite(action.payload, state.data)
+        data: addCatFavourite(action.payload, state.data)
       };
 
     case DOWNVOTE_CAT_SUCCESS:
       return {
         ...state,
-        cats: removeCatVote(action.payload, state.data)
+        data: removeCatVote(action.payload, state.data)
       };
 
     case UPVOTE_CAT_SUCCESS:
       return {
         ...state,
-        cats: addCatVote(action.payload, state.data)
+        data: addCatVote(action.payload, state.data)
       };
     default:
       return state;

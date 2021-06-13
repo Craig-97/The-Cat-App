@@ -5,7 +5,7 @@ import MuiAlert from '@material-ui/lab/Alert';
 
 const Alert = props => <MuiAlert elevation={6} variant="filled" {...props} />;
 
-export const AlertBar = ({ message, severity }) => {
+export const AlertBar = ({ message, severity = 'success' }) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -25,6 +25,7 @@ export const AlertBar = ({ message, severity }) => {
 
   return (
     <Snackbar
+      data-testid="alert-bar"
       anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
       open={open}
       autoHideDuration={6000}

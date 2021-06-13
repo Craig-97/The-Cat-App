@@ -1,5 +1,5 @@
 export const API_BASE = 'https://api.thecatapi.com/v1';
-const API_KEY = '0782e3b8-59b2-46a4-9396-14371afe35be';
+const API_KEY = '0db431c6-efed-4071-8ff6-10c3bbf37e4a';
 
 export const DEFAULT_HEADERS = {
   'Content-Type': 'application/json',
