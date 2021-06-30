@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCatsVotesAndFavs } from '../../api';
 import { catsError, catsLoading } from '../../reducers/catReducer';
-import { getAlert } from '../../reducers/alertReducer';
+import { getAlertMessage, getAlertSeverity } from '../../reducers/alertReducer';
 import { LoadingSpinner } from '../../components/LoadingSpinner';
 import { ErrorPage } from '../../components/ErrorPage/';
 import { AlertBar } from '../../components/AlertBar';
@@ -15,10 +15,11 @@ export const Homepage = () => {
   const dispatch = useDispatch();
 
   /* Fetches cat isLoading, cat errors and alert messages from redux store */
-  const { isLoading, error, alert } = useSelector(state => ({
+  const { isLoading, error, message, severity } = useSelector(state => ({
     isLoading: catsLoading(state),
     error: catsError(state),
-    alert: getAlert(state)
+    message: getAlertMessage(state),
+    severity: getAlertSeverity(state)
   }));
 
   /* Fetches all cat data on mount */
@@ -34,7 +35,7 @@ export const Homepage = () => {
       ) : (
         <CatList />
       )}
-      <AlertBar message={alert?.message} severity={alert?.severity} />
+      <AlertBar message={message} severity={severity} />
       <ErrorPage error={error} />
     </div>
   );

@@ -37,6 +37,5 @@ export const alertMessagesReducer = (state, action) => {
 
 export const alertReducer = reduceReducers(initialState, alertMessagesReducer);
 
-export const getAlert = state => state.alert;
 export const getAlertMessage = state => state.alert?.message;
 export const getAlertSeverity = state => state.alert?.severity;
